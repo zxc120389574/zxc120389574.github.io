@@ -56,7 +56,7 @@ a.tag.article-tag {
     margin: 0 0.3rem; }
 
 .article .article-entry {
-  margin-bottom: 3rem; }
+  margin-bottom: 0rem; }
   .article .article-entry h1, .article .article-entry h2, .article .article-entry h3, .article .article-entry h4, .article .article-entry h5, .article .article-entry h6 {
     cursor: pointer;
     position: relative; }

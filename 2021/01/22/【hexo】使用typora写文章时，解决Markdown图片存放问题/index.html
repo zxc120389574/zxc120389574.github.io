@@ -2,15 +2,13 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Archiv - zxc120389574</title>
+<title>【hexo】使用typora写文章时，解决Markdown图片存放问题 - zxc120389574</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
 
 
 
-
-<meta name="description" content="">
 
 
 
@@ -77,6 +75,16 @@
         <div class="navbar-menu navbar-end">
             
             
+            <div class="navbar-item is-hoverable has-dropdown is-hidden-mobile is-hidden-tablet-only toc">
+                <a class="navbar-item" title="Inhaltsverzeichnis">
+                    <i class="fa fa-list"></i>
+                </a>
+                <div class="navbar-dropdown is-right">
+                    
+                    
+                </div>
+            </div>
+            
             
         </div>
     </div>
@@ -84,40 +92,55 @@
 
     <section class="section">
     <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            【hexo】使用typora写文章时，解决Markdown图片存放问题
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2021-01-21T17:55:41.000Z" itemprop="datePublished">1月 22 2021</time>
+            
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            1 分钟 lesen (Über 112 Wörter)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>1、下载typora。</p>
+<p>2、配置typora。如下图：</p>
+<p><img src="/2021/01/22/%E3%80%90hexo%E3%80%91%E4%BD%BF%E7%94%A8typora%E5%86%99%E6%96%87%E7%AB%A0%E6%97%B6%EF%BC%8C%E8%A7%A3%E5%86%B3Markdown%E5%9B%BE%E7%89%87%E5%AD%98%E6%94%BE%E9%97%AE%E9%A2%98/clipboard.png" alt="img"></p>
+<p>3、在hexo根配置文件（不是主题配置文件）中，设置post_asset_folder为 true。</p>
+<p>4、安装插件 asset-image，它会自动修正md文件中图片的相对路径，以便能够在url中正确路由。</p>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image</span><br></pre></td></tr></tbody></table></figure></body></html>
+    
+    </div>
     
     
-        <div class="archive content">
-            <h4 class="title is-4" id="2021">2021</h4>
-            <div class="articles">
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2021-01-21T17:55:41.000Z" itemprop="datePublished">
-                        1月 22</time>
-                    <h6 class="title is-6"><a href="/2021/01/22/%E3%80%90hexo%E3%80%91%E4%BD%BF%E7%94%A8typora%E5%86%99%E6%96%87%E7%AB%A0%E6%97%B6%EF%BC%8C%E8%A7%A3%E5%86%B3Markdown%E5%9B%BE%E7%89%87%E5%AD%98%E6%94%BE%E9%97%AE%E9%A2%98/">【hexo】使用typora写文章时，解决Markdown图片存放问题</a></h6>
-                </div>
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2021-01-21T16:41:17.000Z" itemprop="datePublished">
-                        1月 22</time>
-                    <h6 class="title is-6"><a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/">【全套教程】如何用github+hex搭建个人博客？</a></h6>
-                </div>
+            <a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/">【全套教程】如何用github+hex搭建个人博客？</a>
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2021-01-12T13:59:36.000Z" itemprop="datePublished">
-                        1月 12</time>
-                    <h6 class="title is-6"><a href="/2021/01/12/%E3%80%90leetcode%E3%80%91-test/">【leetcode】 test</a></h6>
-                </div>
-            
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2021-01-12T12:09:43.000Z" itemprop="datePublished">
-                        1月 12</time>
-                    <h6 class="title is-6"><a href="/2021/01/12/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/">搜索引擎高级搜索</a></h6>
-                </div>
-            
-            </div>
-        </div>
+        </span>
+    </div>
     
-    
+</article>
+
+
+
+
     </div>
 </section>
     <footer class="footer">
