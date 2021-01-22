@@ -4,10 +4,9 @@
     <meta charset="utf-8">
 <title>搜索引擎高级搜索 - zxc120389574</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
-
-<script src="/js/script.js"></script>
 
 
 
@@ -36,8 +35,12 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<!--<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>-->
 
+
+    
+    
+    
 
 
 
@@ -76,13 +79,20 @@
             <a class="navbar-item "
                href="/categories">Categories</a> 
             
+            <a class="navbar-item "
+               target="_blank" rel="noopener" href="https://blog.csdn.net/zxc120389574">CSDN</a> 
+            
         </div>
         
         <div class="navbar-menu navbar-end">
             
+            <a class="navbar-item search" title="Suche" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
             
             <div class="navbar-item is-hoverable has-dropdown is-hidden-mobile is-hidden-tablet-only toc">
-                <a class="navbar-item" title="Table of Contents">
+                <a class="navbar-item" title="Inhaltsverzeichnis">
                     <i class="fa fa-list"></i>
                 </a>
                 <div class="navbar-dropdown is-right">
@@ -96,6 +106,9 @@
     </div>
 </nav>
 
+<script lang="javascript">
+    $("navbar-burger").toggle = function(){alert();};
+</script>
     <section class="section">
     <div class="container">
     <style type="text/css">
@@ -117,19 +130,60 @@ article blockquote{
     color: gray;
 }
 
+.clipboard-btn {
+    background-color: rgb(99, 176, 179) !important;
+    border-radius: 5px;
+    color:white !important;
+    padding: 5px;
+    transition: all 0.1s ease-in-out;
+}
+.clipboard-btn:hover{
+    background-color: cadetblue !important;
+}
+
+.content figure{
+    border: 2px solid rgb(255, 255, 255);
+    transition: all 0.2s ease-in-out;
+}
+.content figure:hover{
+    border: 2px solid cadetblue;
+    background-color: rgb(255, 255, 255); 
+}
+
+.article{
+    /* 文章bottom边界线
+    padding-bottom: 50px;
+    margin-bottom: 50px !important;
+    border-bottom: 1px solid #dbdbdb;
+    */
+}
+
+.article-meta{
+    background-color: rgb(236, 236, 236); 
+    border-radius: 3px;
+    color:gray;   
+    border-left: 5px solid rgb(197, 197, 197);
+    padding-left: 9px;
+    margin-top: 0px  !important;
+    margin-bottom: 30px  !important; 
+}
+
 </style>
 
-
 <article class="article content gallery" itemscope itemprop="blogPost">
+    
+
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
             搜索引擎高级搜索
         
     </h1>
+    
+
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             
-                <time datetime="2021-01-12T12:09:43.000Z" itemprop="datePublished">1月 12 2021</time>
+                <time datetime="2021-01-12T12:09:43.000Z" itemprop="datePublished">2021-01-12</time>
             
         </span>
         
@@ -137,32 +191,44 @@ article blockquote{
         <span class="column is-narrow">
             
             
-            1 分钟 read (About 167 words)
+            1 分钟 lesen (Über 167 Wörter)
         </span>
+        
+            
+
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p><strong>前言：</strong><br>通过多次在谷歌和百度上使用高级搜索，发现，百度与谷歌在收录词条和查询精度上均有较大差距，故推荐在谷歌上使用高级搜索以提高效率。</p>
-<p><strong>常用的高级搜索指令：</strong><br>site，filetype，逻辑与或、逻辑非、双引号、通配符*、intitle、allintitle、inurl、allinurl、intext、allintext</p>
-<p><strong>更详细：</strong><br>更详细的高级搜索看下面这篇博文，包括搜索引擎高级搜索和本地搜索，整理得非常直观非常好：<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1464793">https://cloud.tencent.com/developer/article/1464793</a></p>
+        <html><head></head><body><p><strong>前言：</strong> 通过多次在谷歌和百度上使用高级搜索，发现，百度与谷歌在收录词条和查询精度上均有较大差距，故推荐在谷歌上使用高级搜索以提高效率。</p>
+<p><strong>常用的高级搜索指令：</strong> site，filetype，逻辑与或、逻辑非、双引号、通配符*、intitle、allintitle、inurl、allinurl、intext、allintext</p>
+<p><strong>更详细：</strong> 更详细的高级搜索看下面这篇博文，包括搜索引擎高级搜索和本地搜索，整理得非常直观非常好： <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1464793">https://cloud.tencent.com/developer/article/1464793</a></p>
 </body></html>
     
     </div>
     
     
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/">【全套教程】如何用github+hex搭建个人博客？</a>
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-next">
-            
-        </span>
-    </div>
-    
+
 </article>
+
+<!--这是标签和prev、next按钮，暂时先注释掉了
+
+
+
+<div class="columns is-mobile is-multiline article-nav">
+    <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+        
+        <a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/">【全套教程】如何用github+hex搭建个人博客？</a>
+        
+    </span>
+    <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-next">
+        
+    </span>
+</div>
+
+-->
+ 
+
 
 
 
@@ -193,13 +259,12 @@ article blockquote{
     //parent.remove(img);
 
 </script>
-
-
-
-
     </div>
 </section>
-    <footer class="footer">
+    <style type="text/css">
+</style>
+
+<footer class="footer">
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
@@ -216,11 +281,6 @@ article blockquote{
 </footer>
     
 
-
-<script src="/lightgallery/dist/js/lightgallery-all.min.js"></script>
-
-
-<script src="/lightgallery/lib/jquery.mousewheel.min.js"></script>
 
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
@@ -251,12 +311,85 @@ article blockquote{
 </script>
 
 
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+
+
+
+
+<script src="/lightgallery/dist/js/lightgallery-all.min.js"></script>
+
+
+<script src="/lightgallery/lib/jquery.mousewheel.min.js"></script>
 
 
 <script type="text/javascript">
     $('.lightgallery').lightGallery();
 </script>
-
 
 
     

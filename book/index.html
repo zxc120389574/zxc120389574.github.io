@@ -4,10 +4,9 @@
     <meta charset="utf-8">
 <title>我的书单 - zxc120389574</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
-
-<script src="/js/script.js"></script>
 
 
 
@@ -38,8 +37,12 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<!--<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>-->
 
+
+    
+    
+    
 
 
 
@@ -78,9 +81,16 @@
             <a class="navbar-item "
                href="/categories">Categories</a> 
             
+            <a class="navbar-item "
+               target="_blank" rel="noopener" href="https://blog.csdn.net/zxc120389574">CSDN</a> 
+            
         </div>
         
         <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="Suche" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
             
             
             
@@ -88,6 +98,9 @@
     </div>
 </nav>
 
+<script lang="javascript">
+    $("navbar-burger").toggle = function(){alert();};
+</script>
     <section class="section">
     <div class="container">
     <style type="text/css">
@@ -109,19 +122,60 @@ article blockquote{
     color: gray;
 }
 
+.clipboard-btn {
+    background-color: rgb(99, 176, 179) !important;
+    border-radius: 5px;
+    color:white !important;
+    padding: 5px;
+    transition: all 0.1s ease-in-out;
+}
+.clipboard-btn:hover{
+    background-color: cadetblue !important;
+}
+
+.content figure{
+    border: 2px solid rgb(255, 255, 255);
+    transition: all 0.2s ease-in-out;
+}
+.content figure:hover{
+    border: 2px solid cadetblue;
+    background-color: rgb(255, 255, 255); 
+}
+
+.article{
+    /* 文章bottom边界线
+    padding-bottom: 50px;
+    margin-bottom: 50px !important;
+    border-bottom: 1px solid #dbdbdb;
+    */
+}
+
+.article-meta{
+    background-color: rgb(236, 236, 236); 
+    border-radius: 3px;
+    color:gray;   
+    border-left: 5px solid rgb(197, 197, 197);
+    padding-left: 9px;
+    margin-top: 0px  !important;
+    margin-bottom: 30px  !important; 
+}
+
 </style>
 
-
 <article class="article content gallery" itemscope itemprop="blogPost">
+    
+
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
             我的书单
         
     </h1>
+    
+
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             
-                <time datetime="2021-01-21T15:25:54.522Z" itemprop="datePublished">1月 21 2021</time>
+                <time datetime="2021-01-21T15:25:54.522Z" itemprop="datePublished">2021-01-21</time>
             
         </span>
         
@@ -129,18 +183,30 @@ article blockquote{
         <span class="column is-narrow">
             
             
-            几秒 read (About 0 words)
+            几秒 lesen (Über 0 Wörter)
         </span>
+        
+            
+
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        
+        <html><head></head><body></body></html>
     
     </div>
     
     
+
 </article>
+
+<!--这是标签和prev、next按钮，暂时先注释掉了
+
+
+
+-->
+ 
+
 
 
 
@@ -171,13 +237,12 @@ article blockquote{
     //parent.remove(img);
 
 </script>
-
-
-
-
     </div>
 </section>
-    <footer class="footer">
+    <style type="text/css">
+</style>
+
+<footer class="footer">
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
@@ -194,11 +259,6 @@ article blockquote{
 </footer>
     
 
-
-<script src="/lightgallery/dist/js/lightgallery-all.min.js"></script>
-
-
-<script src="/lightgallery/lib/jquery.mousewheel.min.js"></script>
 
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
@@ -229,12 +289,85 @@ article blockquote{
 </script>
 
 
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+
+
+
+
+<script src="/lightgallery/dist/js/lightgallery-all.min.js"></script>
+
+
+<script src="/lightgallery/lib/jquery.mousewheel.min.js"></script>
 
 
 <script type="text/javascript">
     $('.lightgallery').lightGallery();
 </script>
-
 
 
     
