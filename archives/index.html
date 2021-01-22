@@ -51,7 +51,37 @@
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body>
+    <style type="text/css">
+.search input{
+    line-height: 2rem;
+    width: 20rem;
     
+    border: 1px solid gray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+ 
+    padding-left: 10px;
+}
+.search input:focus{
+    outline:none;
+    border-color:  rgb(46, 137, 197);
+}
+
+.search button{
+    width: 6rem;
+    height: 100%;
+    border: none;
+    background-color: rgb(46, 137, 197);
+    color: white;
+    transition: all 0.1s ease-in-out;
+}
+.search button:hover{
+    background-color: rgb(39, 124, 180);
+    cursor: pointer;
+}
+</style>
+
+
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
@@ -67,10 +97,11 @@
             </div>
         </div>
         
+        
         <div class="navbar-menu navbar-start">
             
             <a class="navbar-item "
-               href="/">Home</a> 
+               href="/index.html">Home</a> 
             
             <a class="navbar-item "
                href="/archive">Archives</a> 
@@ -84,14 +115,27 @@
             <a class="navbar-item "
                target="_blank" rel="noopener" href="https://blog.csdn.net/zxc120389574">CSDN</a> 
             
+            
+            <a class="navbar-item search">
+                <input type="text" placeholder="请输入搜索内容" name="" id="" value="" list="typelist"/>
+                <button><i>搜索</i></button>
+                <datalist id="typelist">
+                　　<option>Dimond</option>
+                　　<option>vertical</option>
+                </datalist>
+            </a> 
         </div>
+
         
+        
+
         <div class="navbar-menu navbar-end">
             
             <a class="navbar-item search" title="Suche" href="javascript:;">
                 <i class="fas fa-search"></i>
             </a>
             
+
             
             
         </div>

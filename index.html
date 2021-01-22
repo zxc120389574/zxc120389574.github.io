@@ -51,7 +51,37 @@
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body>
+    <style type="text/css">
+.search input{
+    line-height: 2rem;
+    width: 20rem;
     
+    border: 1px solid gray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+ 
+    padding-left: 10px;
+}
+.search input:focus{
+    outline:none;
+    border-color:  rgb(46, 137, 197);
+}
+
+.search button{
+    width: 6rem;
+    height: 100%;
+    border: none;
+    background-color: rgb(46, 137, 197);
+    color: white;
+    transition: all 0.1s ease-in-out;
+}
+.search button:hover{
+    background-color: rgb(39, 124, 180);
+    cursor: pointer;
+}
+</style>
+
+
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
@@ -67,10 +97,11 @@
             </div>
         </div>
         
+        
         <div class="navbar-menu navbar-start">
             
-            <a class="navbar-item "
-               href="/">Home</a> 
+            <a class="navbar-item is-active"
+               href="/index.html">Home</a> 
             
             <a class="navbar-item "
                href="/archive">Archives</a> 
@@ -84,14 +115,27 @@
             <a class="navbar-item "
                target="_blank" rel="noopener" href="https://blog.csdn.net/zxc120389574">CSDN</a> 
             
+            
+            <a class="navbar-item search">
+                <input type="text" placeholder="请输入搜索内容" name="" id="" value="" list="typelist"/>
+                <button><i>搜索</i></button>
+                <datalist id="typelist">
+                　　<option>Dimond</option>
+                　　<option>vertical</option>
+                </datalist>
+            </a> 
         </div>
+
         
+        
+
         <div class="navbar-menu navbar-end">
             
             <a class="navbar-item search" title="Suche" href="javascript:;">
                 <i class="fas fa-search"></i>
             </a>
             
+
             
             
         </div>
@@ -161,11 +205,11 @@ img
             
             <article class="article content gallery" itemscope="" itemprop="blogPost">
                 <h1 class="article-title is-size-4 is-size-4-mobile" itemprop="name">
-                    <a href="/2021/01/12/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" itemprop="url">搜索引擎高级搜索</a>
+                    <a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/" itemprop="url">【全套教程】如何用github+hex搭建个人博客？</a>
                 </h1>
                 <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
                     <span class="column is-narrow">
-                        <time datetime="2021-01-12" itemprop="datePublished">2021-01-12</time> 
+                        <time datetime="2021-01-22" itemprop="datePublished">2021-01-22</time> 
                     </span>
                     <span class="column is-narrow article-category">
                         <i class="far fa-folder"></i> 
@@ -175,15 +219,18 @@ img
                     </span>
                     <span class="column is-narrow">
                         
-                        1 分钟 lesen (Über 167 Wörter)
+                        5 分钟 lesen (Über 712 Wörter)
                     </span>
                 </div>
                 <div class="article-entry is-size-6-mobile" itemprop="articleBody">
                     <p><a class="gallery-item" href="/hexo-theme-minos/gallery/forest.jpg">
-                    <img src="/hexo-theme-minos/gallery/forest.jpg" alt=""></a> 前言： 通过多次在谷歌和百度上使用高级搜索，发现，百度与谷歌在收录词条和查询精度上均有较大差距，故推荐在谷歌上使用高级搜索以提高效率。
-常用的高级搜索指令： site，filetype，逻辑与或、逻辑非、双引号、通配符*、intitle、allintitle、inurl、allinurl、intext、allintext
-更详细： 更详细的高级搜索看下面这篇博文，包括搜索引擎高级搜索和本地搜索，整理得非常直观非常好： https://c</p>
-                    <p class="article-more-link"><a href="/2021/01/12/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/">Read More</a></p>
+                    <img src="/hexo-theme-minos/gallery/forest.jpg" alt=""></a> *# 第一安装配置*
+配置直接看这个博客，很直观详细：https://godweiyang.com/2018/04/13/hexo-blog/
+# 如果Git配置ssh-key后仍然需要输入密码，如何解决？这是https的事。
+解决方法1：用ssh方式克隆仓库。比如：
+git clone git@github.com:Name/project.git
+解决方法2：如果你已经clone了， 将项目下面的.git/config文件中的url</p>
+                    <p class="article-more-link"><a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/">Read More</a></p>
                 </div>
             </article>
             
@@ -224,11 +271,11 @@ dsf 中扽sad
             
             <article class="article content gallery" itemscope="" itemprop="blogPost">
                 <h1 class="article-title is-size-4 is-size-4-mobile" itemprop="name">
-                    <a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/" itemprop="url">【全套教程】如何用github+hex搭建个人博客？</a>
+                    <a href="/2021/01/12/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/" itemprop="url">搜索引擎高级搜索</a>
                 </h1>
                 <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
                     <span class="column is-narrow">
-                        <time datetime="2021-01-22" itemprop="datePublished">2021-01-22</time> 
+                        <time datetime="2021-01-12" itemprop="datePublished">2021-01-12</time> 
                     </span>
                     <span class="column is-narrow article-category">
                         <i class="far fa-folder"></i> 
@@ -238,18 +285,15 @@ dsf 中扽sad
                     </span>
                     <span class="column is-narrow">
                         
-                        5 分钟 lesen (Über 712 Wörter)
+                        1 分钟 lesen (Über 167 Wörter)
                     </span>
                 </div>
                 <div class="article-entry is-size-6-mobile" itemprop="articleBody">
                     <p><a class="gallery-item" href="/hexo-theme-minos/gallery/forest.jpg">
-                    <img src="/hexo-theme-minos/gallery/forest.jpg" alt=""></a> *# 第一安装配置*
-配置直接看这个博客，很直观详细：https://godweiyang.com/2018/04/13/hexo-blog/
-# 如果Git配置ssh-key后仍然需要输入密码，如何解决？这是https的事。
-解决方法1：用ssh方式克隆仓库。比如：
-git clone git@github.com:Name/project.git
-解决方法2：如果你已经clone了， 将项目下面的.git/config文件中的url</p>
-                    <p class="article-more-link"><a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/">Read More</a></p>
+                    <img src="/hexo-theme-minos/gallery/forest.jpg" alt=""></a> 前言： 通过多次在谷歌和百度上使用高级搜索，发现，百度与谷歌在收录词条和查询精度上均有较大差距，故推荐在谷歌上使用高级搜索以提高效率。
+常用的高级搜索指令： site，filetype，逻辑与或、逻辑非、双引号、通配符*、intitle、allintitle、inurl、allinurl、intext、allintext
+更详细： 更详细的高级搜索看下面这篇博文，包括搜索引擎高级搜索和本地搜索，整理得非常直观非常好： https://c</p>
+                    <p class="article-more-link"><a href="/2021/01/12/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/">Read More</a></p>
                 </div>
             </article>
             
