@@ -420,7 +420,7 @@ article blockquote{
         <span class="column is-narrow">
             
             
-            5 分钟 de lectura (Alrededor de 712 palabras)
+            5 分钟 lesen (Über 712 Wörter)
         </span>
         
             
@@ -429,62 +429,48 @@ article blockquote{
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p><strong><em>*# 第一安装配置*</em></strong></p>
-<p>配置直接看这个博客，很直观详细：https://godweiyang.com/2018/04/13/hexo-blog/</p>
+        <html><head></head><body><p><strong><em>\</em># 第一安装配置**</strong></p>
+<p>配置直接看这个博客，很直观详细：<a target="_blank" rel="noopener" href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
 <p># 如果Git配置ssh-key后仍然需要输入密码，如何解决？这是https的事。</p>
 <p>解决方法1：用ssh方式克隆仓库。比如：</p>
-<p>git clone git@github.com:Name/project.git</p>
+<p>git clone <a href="mailto:git@github.com">git@github.com</a>:Name/project.git</p>
 <p>解决方法2：如果你已经clone了， 将项目下面的.git/config文件中的url地址改成ssh方式即可。如下：</p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps1.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps2.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps1.jpg" alt="img"> </p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps2.jpg" alt="img"> </p>
 <p>_config.yml配置文件也要一并修改，否则部署的时候仍然需要输入密码。如下：</p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps3.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>参考：https://blog.csdn.net/baidu_35085676/article/details/53456884</p>
-<p><strong><em>*# 发布文章：*</em></strong></p>
-<p>hexo new post "hello world" hexo g hexo d</p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps3.jpg" alt="img"> </p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_35085676/article/details/53456884">https://blog.csdn.net/baidu_35085676/article/details/53456884</a></p>
+<p><strong><em>\</em># 发布文章：**</strong></p>
+<p>hexo new post “hello world” hexo g hexo d</p>
 <p>延迟大概是半分钟。等待半分钟就会更新到你的博客上啦。</p>
 <p>注意：发布完后一定要git保存下hexo，因为文章最终还是保存在hexo下的。写个脚本即可，如下：</p>
-<p>hexo clean hexo g hexo d git add -A git commit -m "$1" git push origin hexo</p>
+<p>hexo clean hexo g hexo d git add -A git commit -m “$1” git push origin hexo</p>
 <p>脚本运行：</p>
-<p>bash ./save.sh "你的commit内容"</p>
-<p><strong><em>*# 保存后端hexo（前端不用管，hexo自动部署到github）：*</em></strong></p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps4.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p>bash ./save.sh “你的commit内容”</p>
+<p><strong><em>\</em># 保存后端hexo（前端不用管，hexo自动部署到github）：**</strong></p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps4.jpg" alt="img"> </p>
 <p>用git保存所有，则只保存上述红框框内的文件。我们也只需要保存这几个就可以了。</p>
-<p><strong><em>*# 如何修改hexo的配置？*</em></strong></p>
+<p><strong><em>\</em># 如何修改hexo的配置？**</strong></p>
 <p>1、进度hexo后端文件夹。</p>
 <p>2、修改对应的配置文件。</p>
 <p>3、git直接上传保存。</p>
-<p><strong><em>*# 如果换了一台电脑怎么办？*</em></strong></p>
+<p><strong><em>\</em># 如果换了一台电脑怎么办？**</strong></p>
 <p>1、从git上下载hexo后端。</p>
 <p>2、安装hexo组件：</p>
 <p>npm i hexo-cli -g npm install</p>
 <p>用hexo -v查看下是否成功。</p>
-<p><strong><em>*# 开发工具vscode配置：*</em></strong></p>
+<p><strong><em>\</em># 开发工具vscode配置：**</strong></p>
 <p>1、首先得安装git，并记下git的安装地址，下面要用。</p>
 <p>2、按Ctrl+Shift+P，然后跟着下图去做：</p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps5.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps5.jpg" alt="img"> </p>
 <p>在settings.json中添加下面指令（如下图）：</p>
-<p>"terminal.integrated.shell.windows": "D:\Program Files\Git\bin\sh.exe",</p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps6.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p>“terminal.integrated.shell.windows”: “D:\Program Files\Git\bin\sh.exe”,</p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps6.jpg" alt="img"> </p>
 <p>最终效果图如下。你还能输入cmd或bash变来变去，很强大。</p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps7.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>还有各种各样shell相关的辅助插件，详细见博文：https://www.cnblogs.com/Sweettesting/p/13827376.html</p>
-<p># 如果git add出现 "fatal: in unpopulated submodule XXX" 错误怎么办？</p>
-<p>https://blog.csdn.net/qq_36337754/article/details/105425528</p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps7.jpg" alt="img"> </p>
+<p>还有各种各样shell相关的辅助插件，详细见博文：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Sweettesting/p/13827376.html">https://www.cnblogs.com/Sweettesting/p/13827376.html</a></p>
+<p># 如果git add出现 “fatal: in unpopulated submodule XXX” 错误怎么办？</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36337754/article/details/105425528">https://blog.csdn.net/qq_36337754/article/details/105425528</a></p>
 </body></html>
     
     </div>
