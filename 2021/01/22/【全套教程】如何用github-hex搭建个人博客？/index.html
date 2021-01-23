@@ -63,10 +63,13 @@
 }
 
 #local-search-input{
+    width: 100%;
+    border-radius: 0.2rem;
     width: 30rem;
     height: 100%;
     font-size: 1.0rem;
     padding: 0.5rem;
+    border-color: rgb(197, 197, 197);
 }
 
 #local-search-input:focus{
@@ -81,21 +84,46 @@
     background-color: rgb(255, 255, 255); 
     box-shadow: 0 0 20px rgb(182, 182, 182);
     border-radius: 0.5rem;
+    color:black;
+
+    text-align: left;
+}
+
+.navbar-start{
+    overflow: visible !important;
+}
+
+@media screen and (max-width: 1023px){
+    #local-search-input{
+        width: 100%;
+    }
+    #local-search-result{
+    }
+    
 }
 
 #local-search-result ul{
-    margin: 15px;
+    margin: 10px;
 }
 
 #local-search-result ul li{
-    margin-bottom: 30px;
-    padding-left: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
     border-left: 4px solid rgb(182, 156, 255);
+    border-radius: 0.2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+#local-search-result ul li:hover{ 
+    background-color: rgb(242, 234, 255);
 }
 
 .search-keyword{
     color: red;
 }
+
+
+
 </style>
 
 
@@ -103,7 +131,7 @@
 
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
     <div class="container">
-        <div id="local-search-result"></div>
+        
         <div class="navbar-brand">
             <a class="navbar-item navbar-logo" href="/">
                 
@@ -135,13 +163,13 @@
             <a class="navbar-item "
                target="_blank" rel="noopener" href="https://blog.csdn.net/zxc120389574">CSDN</a> 
             
-            
             <!--自己写的search，很不好-->
-            <a class="navbar-item" style="cursor:no-drop;">
-                <input id="local-search-input" type="search" placeholder="Search文章title或content，空格间隔keywords" value="">
+            <a class="navbar-item" style="cursor:default;">
+                <div>
+                    <input id="local-search-input" type="search" placeholder="Search文章title或content，空格间隔keywords" value="">
+                    <div id="local-search-result"></div>
+                </div>
             </a> 
-            
-
         </div>
 
         
@@ -162,6 +190,7 @@
 
 
 <script type="text/javascript">
+
     var searchFunc = function(path, search_id, content_id) {
        
     'use strict';
@@ -201,7 +230,7 @@
                         }
                         var data_title = data.title.trim().toLowerCase();
                         var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
+                        var data_url = "/"+data.url;
                         var index_title = -1;
                         var index_content = -1;
                         var first_occur = -1;
@@ -281,6 +310,23 @@
       searchFunc(path, 'local-search-input', 'local-search-result');
     </script>
  
+
+<script type="text/javascript">
+$(".navbar-burger").on("click",function(){
+    var navbar_burger = $(".navbar-burger");
+    var navbar_start = $(".navbar-start");
+    var navbar_end = $(".navbar-start");
+    if (navbar_burger.hasClass("is-active")){
+        navbar_burger.removeClass("is-active");
+        navbar_start.removeClass("is-active");
+        navbar_end.removeClass("is-active");
+    }else{
+        navbar_burger.addClass("is-active");
+        navbar_start.addClass("is-active");
+        navbar_end.addClass("is-active");
+    }
+});
+</script>
     <section class="section">
     <div class="container">
     <style type="text/css">
@@ -351,6 +397,12 @@ article blockquote{
         
     </h1>
     
+        <div class="columns is-variable is-1 is-multiline is-mobile" style="margin-bottom: 0;"> 
+        
+            <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/hexo/">#hexo</a></span>
+        
+        </div>
+    
 
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
@@ -359,11 +411,16 @@ article blockquote{
             
         </span>
         
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/hexo/">hexo</a>
+        </span>
+        
         
         <span class="column is-narrow">
             
             
-            5 分钟 lesen (Über 712 Wörter)
+            5 分钟 read (About 712 words)
         </span>
         
             
@@ -372,48 +429,62 @@ article blockquote{
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p><strong><em>\</em># 第一安装配置**</strong></p>
-<p>配置直接看这个博客，很直观详细：<a target="_blank" rel="noopener" href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
+        <html><head></head><body><p><strong><em>*# 第一安装配置*</em></strong></p>
+<p>配置直接看这个博客，很直观详细：https://godweiyang.com/2018/04/13/hexo-blog/</p>
 <p># 如果Git配置ssh-key后仍然需要输入密码，如何解决？这是https的事。</p>
 <p>解决方法1：用ssh方式克隆仓库。比如：</p>
-<p>git clone <a href="mailto:git@github.com">git@github.com</a>:Name/project.git</p>
+<p>git clone git@github.com:Name/project.git</p>
 <p>解决方法2：如果你已经clone了， 将项目下面的.git/config文件中的url地址改成ssh方式即可。如下：</p>
-<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps1.jpg" alt="img"> </p>
-<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps2.jpg" alt="img"> </p>
+<figure>
+<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps1.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps2.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>_config.yml配置文件也要一并修改，否则部署的时候仍然需要输入密码。如下：</p>
-<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps3.jpg" alt="img"> </p>
-<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_35085676/article/details/53456884">https://blog.csdn.net/baidu_35085676/article/details/53456884</a></p>
-<p><strong><em>\</em># 发布文章：**</strong></p>
-<p>hexo new post “hello world” hexo g hexo d</p>
+<figure>
+<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps3.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>参考：https://blog.csdn.net/baidu_35085676/article/details/53456884</p>
+<p><strong><em>*# 发布文章：*</em></strong></p>
+<p>hexo new post "hello world" hexo g hexo d</p>
 <p>延迟大概是半分钟。等待半分钟就会更新到你的博客上啦。</p>
 <p>注意：发布完后一定要git保存下hexo，因为文章最终还是保存在hexo下的。写个脚本即可，如下：</p>
-<p>hexo clean hexo g hexo d git add -A git commit -m “$1” git push origin hexo</p>
+<p>hexo clean hexo g hexo d git add -A git commit -m "$1" git push origin hexo</p>
 <p>脚本运行：</p>
-<p>bash ./save.sh “你的commit内容”</p>
-<p><strong><em>\</em># 保存后端hexo（前端不用管，hexo自动部署到github）：**</strong></p>
-<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps4.jpg" alt="img"> </p>
+<p>bash ./save.sh "你的commit内容"</p>
+<p><strong><em>*# 保存后端hexo（前端不用管，hexo自动部署到github）：*</em></strong></p>
+<figure>
+<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps4.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>用git保存所有，则只保存上述红框框内的文件。我们也只需要保存这几个就可以了。</p>
-<p><strong><em>\</em># 如何修改hexo的配置？**</strong></p>
+<p><strong><em>*# 如何修改hexo的配置？*</em></strong></p>
 <p>1、进度hexo后端文件夹。</p>
 <p>2、修改对应的配置文件。</p>
 <p>3、git直接上传保存。</p>
-<p><strong><em>\</em># 如果换了一台电脑怎么办？**</strong></p>
+<p><strong><em>*# 如果换了一台电脑怎么办？*</em></strong></p>
 <p>1、从git上下载hexo后端。</p>
 <p>2、安装hexo组件：</p>
 <p>npm i hexo-cli -g npm install</p>
 <p>用hexo -v查看下是否成功。</p>
-<p><strong><em>\</em># 开发工具vscode配置：**</strong></p>
+<p><strong><em>*# 开发工具vscode配置：*</em></strong></p>
 <p>1、首先得安装git，并记下git的安装地址，下面要用。</p>
 <p>2、按Ctrl+Shift+P，然后跟着下图去做：</p>
-<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps5.jpg" alt="img"> </p>
+<figure>
+<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps5.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>在settings.json中添加下面指令（如下图）：</p>
-<p>“terminal.integrated.shell.windows”: “D:\Program Files\Git\bin\sh.exe”,</p>
-<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps6.jpg" alt="img"> </p>
+<p>"terminal.integrated.shell.windows": "D:\Program Files\Git\bin\sh.exe",</p>
+<figure>
+<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps6.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>最终效果图如下。你还能输入cmd或bash变来变去，很强大。</p>
-<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps7.jpg" alt="img"> </p>
-<p>还有各种各样shell相关的辅助插件，详细见博文：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Sweettesting/p/13827376.html">https://www.cnblogs.com/Sweettesting/p/13827376.html</a></p>
-<p># 如果git add出现 “fatal: in unpopulated submodule XXX” 错误怎么办？</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36337754/article/details/105425528">https://blog.csdn.net/qq_36337754/article/details/105425528</a></p>
+<figure>
+<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/wps7.jpg" alt="img"><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>还有各种各样shell相关的辅助插件，详细见博文：https://www.cnblogs.com/Sweettesting/p/13827376.html</p>
+<p># 如果git add出现 "fatal: in unpopulated submodule XXX" 错误怎么办？</p>
+<p>https://blog.csdn.net/qq_36337754/article/details/105425528</p>
 </body></html>
     
     </div>
@@ -423,6 +494,12 @@ article blockquote{
 </article>
 
 <!--这是标签和prev、next按钮，暂时先注释掉了
+
+<div class="columns is-variable is-1 is-multiline is-mobile">
+
+    <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/hexo/">#hexo</a></span>
+
+</div>
 
 
 

@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Archiv - zxc120389574</title>
+<title>Archives - zxc120389574</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -65,10 +65,13 @@
 }
 
 #local-search-input{
+    width: 100%;
+    border-radius: 0.2rem;
     width: 30rem;
     height: 100%;
     font-size: 1.0rem;
     padding: 0.5rem;
+    border-color: rgb(197, 197, 197);
 }
 
 #local-search-input:focus{
@@ -83,21 +86,46 @@
     background-color: rgb(255, 255, 255); 
     box-shadow: 0 0 20px rgb(182, 182, 182);
     border-radius: 0.5rem;
+    color:black;
+
+    text-align: left;
+}
+
+.navbar-start{
+    overflow: visible !important;
+}
+
+@media screen and (max-width: 1023px){
+    #local-search-input{
+        width: 100%;
+    }
+    #local-search-result{
+    }
+    
 }
 
 #local-search-result ul{
-    margin: 15px;
+    margin: 10px;
 }
 
 #local-search-result ul li{
-    margin-bottom: 30px;
-    padding-left: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
     border-left: 4px solid rgb(182, 156, 255);
+    border-radius: 0.2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+#local-search-result ul li:hover{ 
+    background-color: rgb(242, 234, 255);
 }
 
 .search-keyword{
     color: red;
 }
+
+
+
 </style>
 
 
@@ -105,7 +133,7 @@
 
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
     <div class="container">
-        <div id="local-search-result"></div>
+        
         <div class="navbar-brand">
             <a class="navbar-item navbar-logo" href="/">
                 
@@ -137,13 +165,13 @@
             <a class="navbar-item "
                target="_blank" rel="noopener" href="https://blog.csdn.net/zxc120389574">CSDN</a> 
             
-            
             <!--自己写的search，很不好-->
-            <a class="navbar-item" style="cursor:no-drop;">
-                <input id="local-search-input" type="search" placeholder="Search文章title或content，空格间隔keywords" value="">
+            <a class="navbar-item" style="cursor:default;">
+                <div>
+                    <input id="local-search-input" type="search" placeholder="Search文章title或content，空格间隔keywords" value="">
+                    <div id="local-search-result"></div>
+                </div>
             </a> 
-            
-
         </div>
 
         
@@ -164,6 +192,7 @@
 
 
 <script type="text/javascript">
+
     var searchFunc = function(path, search_id, content_id) {
        
     'use strict';
@@ -203,7 +232,7 @@
                         }
                         var data_title = data.title.trim().toLowerCase();
                         var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
+                        var data_url = "/"+data.url;
                         var index_title = -1;
                         var index_content = -1;
                         var first_occur = -1;
@@ -283,6 +312,23 @@
       searchFunc(path, 'local-search-input', 'local-search-result');
     </script>
  
+
+<script type="text/javascript">
+$(".navbar-burger").on("click",function(){
+    var navbar_burger = $(".navbar-burger");
+    var navbar_start = $(".navbar-start");
+    var navbar_end = $(".navbar-start");
+    if (navbar_burger.hasClass("is-active")){
+        navbar_burger.removeClass("is-active");
+        navbar_start.removeClass("is-active");
+        navbar_end.removeClass("is-active");
+    }else{
+        navbar_burger.addClass("is-active");
+        navbar_start.addClass("is-active");
+        navbar_end.addClass("is-active");
+    }
+});
+</script>
     <section class="section">
     <div class="container">
     
