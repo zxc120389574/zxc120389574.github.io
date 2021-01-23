@@ -124,6 +124,18 @@
     color: red;
 }
 
+.navbar-item img{
+    max-width: 100%;
+}
+
+nav{
+    background: none;
+}
+
+.nav_bg{ 
+    background-color: rgb(255, 255, 255); 
+    box-shadow: 0 3px 15px rgb(228, 228, 228); 
+}
 
 
 </style>
@@ -157,13 +169,16 @@
                href="/archive">Archives</a> 
             
             <a class="navbar-item "
-               href="/categories">Categories</a> 
-            
-            <a class="navbar-item "
                href="/tags">Tags</a> 
             
             <a class="navbar-item "
+               href="/categories">Categories</a> 
+            
+            <a class="navbar-item "
                target="_blank" rel="noopener" href="https://blog.csdn.net/zxc120389574">CSDN</a> 
+            
+            <a class="navbar-item "
+               href="/about">About</a> 
             
             <!--自己写的search，很不好-->
             <a class="navbar-item" style="cursor:default;">
@@ -329,6 +344,19 @@ $(".navbar-burger").on("click",function(){
     }
 });
 </script>
+
+<script>
+$(function(){
+     $(window).scroll(function(){
+        var top_offset = $("nav").offset().top;
+        if (top_offset == 0){
+            $("nav").removeClass("nav_bg");
+        }else{
+            $("nav").addClass("nav_bg");
+        }
+    })
+})
+</script>
     <section class="section">
     <div class="container">
     
@@ -353,12 +381,6 @@ $(".navbar-burger").on("click",function(){
                     <time class="is-text-small" datetime="2021-01-21T16:41:17.000Z" itemprop="datePublished">
                         1月 22</time>
                     <h6 class="title is-6"><a href="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/">【全套教程】如何用github+hex搭建个人博客？</a></h6>
-                </div>
-            
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2021-01-12T12:09:43.000Z" itemprop="datePublished">
-                        1月 12</time>
-                    <h6 class="title is-6"><a href="/2021/01/12/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2/">搜索引擎高级搜索</a></h6>
                 </div>
             
             </div>

@@ -122,6 +122,18 @@
     color: red;
 }
 
+.navbar-item img{
+    max-width: 100%;
+}
+
+nav{
+    background: none;
+}
+
+.nav_bg{ 
+    background-color: rgb(255, 255, 255); 
+    box-shadow: 0 3px 15px rgb(228, 228, 228); 
+}
 
 
 </style>
@@ -155,13 +167,16 @@
                href="/archive">Archives</a> 
             
             <a class="navbar-item "
-               href="/categories">Categories</a> 
-            
-            <a class="navbar-item "
                href="/tags">Tags</a> 
             
             <a class="navbar-item "
+               href="/categories">Categories</a> 
+            
+            <a class="navbar-item "
                target="_blank" rel="noopener" href="https://blog.csdn.net/zxc120389574">CSDN</a> 
+            
+            <a class="navbar-item "
+               href="/about">About</a> 
             
             <!--自己写的search，很不好-->
             <a class="navbar-item" style="cursor:default;">
@@ -327,6 +342,19 @@ $(".navbar-burger").on("click",function(){
     }
 });
 </script>
+
+<script>
+$(function(){
+     $(window).scroll(function(){
+        var top_offset = $("nav").offset().top;
+        if (top_offset == 0){
+            $("nav").removeClass("nav_bg");
+        }else{
+            $("nav").addClass("nav_bg");
+        }
+    })
+})
+</script>
     <section class="section">
     <div class="container">
     <style type="text/css">
@@ -411,16 +439,11 @@ article blockquote{
             
         </span>
         
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/hexo/">hexo</a>
-        </span>
-        
         
         <span class="column is-narrow">
             
             
-            1 分钟 read (About 112 words)
+            1 分钟 lire (À propos 112 mots)
         </span>
         
             
