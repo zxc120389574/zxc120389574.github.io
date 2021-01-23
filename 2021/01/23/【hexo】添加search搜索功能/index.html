@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Tags - zxc120389574</title>
+<title>【hexo】添加search搜索功能 - zxc120389574</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,8 +11,6 @@
 
 
 
-
-<meta name="description" content="">
 
 
 
@@ -168,7 +166,7 @@ nav{
             <a class="navbar-item "
                href="/archive">Archives</a> 
             
-            <a class="navbar-item is-active"
+            <a class="navbar-item "
                href="/tags">Tags</a> 
             
             <a class="navbar-item "
@@ -357,58 +355,172 @@ $(function(){
     })
 })
 </script>
-    <section class="section section-heading">
+    <section class="section">
     <div class="container">
-        <div class="content">
-            <h5>#Tags</h5>
+    <style type="text/css">
+
+article img{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 10px rgb(165, 164, 164); 
+    transition: box-shadow 0.1s ease-in-out;  
+}
+article img:hover{
+    box-shadow: 0 0 15px rgb(156, 156, 156); 
+}
+
+article blockquote{
+    border-radius: 0.2rem;
+    border-color: #209cee !important;
+    background-color: #def0fd !important;
+    color: gray;
+}
+
+.clipboard-btn {
+    background-color: rgb(99, 176, 179) !important;
+    border-radius: 5px;
+    color:white !important;
+    padding: 5px;
+    transition: all 0.1s ease-in-out;
+}
+.clipboard-btn:hover{
+    background-color: cadetblue !important;
+}
+
+.content .hljs{
+    border: 2px solid rgb(255, 255, 255);
+    transition: all 0.2s ease-in-out;
+}
+.content .hljs:hover{
+    border: 2px solid cadetblue;
+    background-color: rgb(255, 255, 255); 
+}
+
+.article{
+    /* 文章bottom边界线
+    padding-bottom: 50px;
+    margin-bottom: 50px !important;
+    border-bottom: 1px solid #dbdbdb;
+    */
+}
+
+.article-meta{
+    background-color: rgb(236, 236, 236); 
+    border-radius: 3px;
+    color:gray;   
+    border-left: 5px solid rgb(197, 197, 197);
+    padding-left: 9px;
+    margin-top: 0px  !important;
+    margin-bottom: 30px  !important; 
+}
+
+</style>
+
+<article class="article content gallery" itemscope itemprop="blogPost">
+    
+
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            【hexo】添加search搜索功能
+        
+    </h1>
+    
+        <div class="columns is-variable is-1 is-multiline is-mobile" style="margin-bottom: 0;"> 
+        
+            <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/hexo/">#hexo</a></span>
+        
+            <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/">#站内搜索</a></span>
+        
         </div>
+    
+
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2021-01-23T09:15:57.000Z" itemprop="datePublished">2021-01-23</time>
+            
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            几秒 read (About 15 words)
+        </span>
+        
+            
+
+        
     </div>
-</section>
-<section class="section">
-    <div class="container">
-        <div class="columns is-variable is-1 is-multiline is-mobile">
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/hexo/">#hexo&nbsp;(3)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/html/">#html&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/css/">#css&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/%E5%89%8D%E7%AB%AF/">#前端&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/">#站内搜索&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/nodejs/">#nodejs&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/%E7%88%AC%E8%99%AB/">#爬虫&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/">#测试页面&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/">#搜索技巧&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/tags/%E6%A3%80%E7%B4%A2/">#检索&nbsp;(1)</a>
-            </span>
-            
-        </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>看这个教程即可：<a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search">https://github.com/wzpan/hexo-generator-search</a></p>
+</body></html>
+    
+    </div>
+    
+    
+
+</article>
+
+<!--这是标签和prev、next按钮，暂时先注释掉了
+
+<div class="columns is-variable is-1 is-multiline is-mobile">
+
+    <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/hexo/">#hexo</a></span>
+
+    <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/">#站内搜索</a></span>
+
+</div>
+
+
+
+<div class="columns is-mobile is-multiline article-nav">
+    <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+        
+        <a href="/2021/01/23/html%E5%B8%83%E5%B1%80%E6%80%BB%E7%BB%93/">html布局总结</a>
+        
+    </span>
+    <span class="column is-12-mobile is-half-desktop  article-nav-next">
+        
+        <a href="/2021/01/22/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/">测试页面</a>
+        
+    </span>
+</div>
+
+-->
+ 
+
+
+
+
+
+
+
+
+<!--这是个demo，基本上就是这个结构了
+<div class="lightgallery">
+    <a data-src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-1.jpg">
+        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-1.jpg" alt="demo，成功"/> 
+    </a>
+</div>
+-->
+
+<script lang="javascript">
+    var imgs = $("article img");
+    imgs.wrap("<div class='lightgallery'><a data-src></a></div>");
+
+    for (var i = 0; i < imgs.length; ++i){
+        var img = imgs[i];
+        var src = img.src;
+        var parent = img.parentNode;
+        $(parent).attr("data-src", src);
+    }
+
+   
+    //parent.remove(img);
+
+</script>
     </div>
 </section>
     <style type="text/css">
