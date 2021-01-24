@@ -460,29 +460,27 @@ article blockquote{
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
         <html><head></head><body><p><strong>第一安装配置</strong></p>
-<p>配置直接看这个博客，很直观详细：https://godweiyang.com/2018/04/13/hexo-blog/</p>
+<p>配置直接看这个博客，很直观详细：<a target="_blank" rel="noopener" href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
 <p><strong>如果Git配置ssh-key后仍然需要输入密码，如何解决？</strong></p>
 <p>这是https的事。</p>
-<p>解决方法1：用ssh方式克隆仓库。比如： </p><figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">clone</span> git@github.com:Name/project.git</span><br></pre></td></tr></tbody></table></figure> 解决方法2：如果你已经clone了， 将项目下面的.git/config文件中的url地址改成ssh方式即可。如下：<p></p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414384061.png" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414375628.png" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p>解决方法1：用ssh方式克隆仓库。比如：</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">clone</span> git@github.com:Name/project.git</span><br></pre></td></tr></tbody></table></figure>
+<p>解决方法2：如果你已经clone了， 将项目下面的.git/config文件中的url地址改成ssh方式即可。如下：</p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414384061.png" alt="img"></p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414375628.png" alt="img"> </p>
 <p>_config.yml配置文件也要一并修改，否则部署的时候仍然需要输入密码。如下：</p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414365740.png" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>参考：https://blog.csdn.net/baidu_35085676/article/details/53456884</p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414365740.png" alt="img"></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_35085676/article/details/53456884">https://blog.csdn.net/baidu_35085676/article/details/53456884</a></p>
 <p><strong>发布文章：</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="hljs-string">"hello world"</span> </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></tbody></table></figure>
 <p>延迟大概是半分钟。等待半分钟就会更新到你的博客上啦。</p>
-<p>注意：发布完后一定要git保存下hexo，因为文章最终还是保存在hexo下的。写个脚本即可，如下： </p><figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d </span><br><span class="line">git add -A git commit -m <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> </span><br><span class="line">git push origin hexo</span><br></pre></td></tr></tbody></table></figure> 脚本运行： <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash ./save.sh <span class="hljs-string">"你的commit内容"</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>注意：发布完后一定要git保存下hexo，因为文章最终还是保存在hexo下的。写个脚本即可，如下：</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d </span><br><span class="line">git add -A git commit -m <span class="hljs-string">"<span class="hljs-variable">$1</span>"</span> </span><br><span class="line">git push origin hexo</span><br></pre></td></tr></tbody></table></figure>
+<p>脚本运行：</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash ./save.sh <span class="hljs-string">"你的commit内容"</span></span><br></pre></td></tr></tbody></table></figure>
+
 <p><strong>保存后端hexo（前端不用管，hexo自动部署到github）：</strong></p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414351495.png" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414351495.png" alt="img"></p>
 <p>用git保存所有，则只保存上述红框框内的文件。我们也只需要保存这几个就可以了。</p>
 <p><strong>如何修改hexo的配置？</strong></p>
 <p>1、进度hexo后端文件夹。</p>
@@ -490,25 +488,23 @@ article blockquote{
 <p>3、git直接上传保存。</p>
 <p><strong>如果换了一台电脑怎么办？</strong></p>
 <p>1、从git上下载hexo后端。</p>
-<p>2、安装hexo组件： </p><figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-cli -g </span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure> 用<code>hexo -v</code>查看下是否成功。<p></p>
+<p>2、安装hexo组件：</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-cli -g </span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure>
+<p>用<code>hexo -v</code>查看下是否成功。</p>
 <p><strong>开发工具vscode配置：</strong></p>
 <p>1、首先得安装git，并记下git的安装地址，下面要用。</p>
 <p>2、按Ctrl+Shift+P，然后跟着下图去做：</p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414330470.png" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414330470.png" alt="img"></p>
 <p>在settings.json中添加下面指令（如下图）：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"terminal.integrated.shell.windows": "D:\\Program Files\\Git\\bin\\sh.exe",</span><br></pre></td></tr></tbody></table></figure>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414323421.png" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
+
+
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414323421.png" alt="img"></p>
 <p>最终效果图如下。你还能输入cmd或bash变来变去，很强大。</p>
-<figure>
-<img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414315460.png" alt="img"><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>还有各种各样shell相关的辅助插件，详细见博文：https://www.cnblogs.com/Sweettesting/p/13827376.html</p>
-<p><strong>如果git add出现 "fatal: in unpopulated submodule XXX" 错误怎么办？</strong></p>
-<p>看这里：https://blog.csdn.net/qq_36337754/article/details/105425528</p>
+<p><img src="/2021/01/22/%E3%80%90%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%E3%80%91%E5%A6%82%E4%BD%95%E7%94%A8github-hex%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/clipboard-1611414315460.png" alt="img"></p>
+<p>还有各种各样shell相关的辅助插件，详细见博文：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Sweettesting/p/13827376.html">https://www.cnblogs.com/Sweettesting/p/13827376.html</a></p>
+<p><strong>如果git add出现 “fatal: in unpopulated submodule XXX” 错误怎么办？</strong></p>
+<p>看这里：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36337754/article/details/105425528">https://blog.csdn.net/qq_36337754/article/details/105425528</a></p>
 </body></html>
     
     </div>

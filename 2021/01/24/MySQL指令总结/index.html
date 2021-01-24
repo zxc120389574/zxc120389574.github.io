@@ -464,38 +464,70 @@ article blockquote{
         <html><head></head><body><a id="more"></a>
 <p>通过SQL的 GRANT 命令，指定数据库TUTORIALS添加用户 zara ，密码为 zara123 。</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant select,insert,update,delete,create,drop on TUTORIALS.* to 'zara'@'localhost' identified by '123';  # 如果没有identified by '123'，则会把用户密码给清掉</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>显示数据表的属性：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show columns from runoob_tbl;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>显示数据表详细的索引信息：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show index from runoob_tbl;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>显示数据库所有数据表的信息：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">show table status from RUNOOB;   # 显示数据库 RUNOOB 中所有表的信息</span><br><span class="line">show table status from RUNOOB like 'runoob%';     # 表名以runoob开头的表的信息</span><br><span class="line">show table status from RUNOOB like 'runoob%'\G;   # 加上 \G，查询结果按列打印</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>先看数据表属性：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc RUNOOB;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>使用mysql二进制方式连接：</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p -h ip_addr</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>创建数据库：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名;</span><br></pre></td></tr></tbody></table></figure>
 <p>使用mysqladmin创建数据库：</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p create RUNOOB</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>删除数据库：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database &lt;数据库名&gt;;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>选择数据库：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use RUNOOB;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>创建数据库表：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists `runoob_tbl`(</span><br><span class="line">   `runoob_id` INT UNSIGNED AUTO_INCREMENT,</span><br><span class="line">   `runoob_title` VARCHAR(100) NOT NULL,</span><br><span class="line">   `runoob_author` VARCHAR(40) NOT NULL,</span><br><span class="line">   `submission_date` DATE,</span><br><span class="line">   PRIMARY KEY ( `runoob_id` )</span><br><span class="line">)ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>删除数据表：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table table_name;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>插入数据：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into table_name(field1, field2,..fieldN) values(value1,value2,...valueN);</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>更新数据：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update table_name set field1=new_val1, field2=new_val2;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>删除语句：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from table_name where field1=target_val1</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>正则表达式：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP '^st';</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>事务处理：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">begin; # 开始事务</span><br><span class="line">rollback; # 回滚，只有在事务中才可以回滚</span><br><span class="line">commit; # 提交事务</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>删除、添加和修改字段：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table test drop i; # 删除字段</span><br><span class="line">alter table test add i int; # 添加字段</span><br><span class="line">alter table test add i int first; # 添加字段到最前面</span><br><span class="line">alter table test add i int after c; # 添加字段到c后面</span><br></pre></td></tr></tbody></table></figure>
 <p>修改字段类型及名称（modify只修改字段类型；change既修改字段名，也修改字段类型）：</p>
@@ -510,6 +542,8 @@ article blockquote{
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table test engine = MYISAM;</span><br></pre></td></tr></tbody></table></figure>
 <p>修改表名：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table test rename to test2;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <hr>
 <p>创建索引：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index indexName ON mytable(username(length));</span><br></pre></td></tr></tbody></table></figure>
@@ -525,20 +559,30 @@ article blockquote{
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table mytable add unique [indexName](username(length))</span><br></pre></td></tr></tbody></table></figure>
 <p>创建数据表时直接指定唯一索引：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table mytable(</span><br><span class="line">id int not null,</span><br><span class="line">username varchar(16) not null,</span><br><span class="line">unique [indexName](username(length))</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>使用alter命令添加和删除索引：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table tbl_name add primary key(column_list); # 该语句添加一个主键，这意味着索引值必须是唯一的，且不能为NULL。</span><br><span class="line">alter table tbl_name add unique index_name(column_list); # 这条语句创建索引的值必须是唯一的（除了NULL外，NULL可能会出现多次）。</span><br><span class="line">alter table tbl_name add index index_name(column_list); # 添加普通索引，索引值可出现多次。</span><br><span class="line">alter table tbl_name add fulltext index_name(column_list); # 该语句指定了索引为 FULLTEXT ，用于全文索引。</span><br></pre></td></tr></tbody></table></figure>
 <p>实例：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table test add index(c); # 添加普通索引</span><br><span class="line">alter table test drop index c; # 删除索引</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>使用alter命令为i添加和删除主键：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter table test modify i int not null;</span><br><span class="line">alter table test add primary key(i);</span><br><span class="line">alter table test drop primary key;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>显示索引：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show index from table_name;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <hr>
 <p>临时表：MySQL 临时表在我们需要保存一些临时数据时是非常有用的。临时表只在当前连接可见，当关闭连接时，Mysql会自动删除表并释放所有空间。show tables是看不到临时表的，从第一次insert数据之后才会创建，连接关闭后会自动释放。</p>
 <p>创建临时表：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create temporary table SalesSummary(</span><br><span class="line">	product_name varchar(50) not null,</span><br><span class="line">    total_sales decimal(12,2) not null default 0.00,</span><br><span class="line">    avg_unit_price decimal(7,2) not null default 0.00,</span><br><span class="line">    total_units_sold int unsigned not null default 0</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
 <p>删除临时表：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table SalesSumary;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <hr>
 <p>复制表：</p>
 <p>1、获取数据表的完整结构：</p>
@@ -547,50 +591,82 @@ article blockquote{
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `clone_mtest` (</span><br><span class="line">  `id` int(5) DEFAULT NULL,</span><br><span class="line">  `i2` bigint(20) NOT NULL DEFAULT '100',</span><br><span class="line">  `svrzhang` int(11) DEFAULT '43232',</span><br><span class="line">  KEY `i2` (`i2`),</span><br><span class="line">  KEY `i2_2` (`i2`)</span><br><span class="line">) ENGINE=MyISAM DEFAULT CHARSET=latin1clone_test </span><br></pre></td></tr></tbody></table></figure>
 <p>3、将数据旧数据拷贝到新表中去：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into clone_test select * from test;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>元数据：数据库服务器自身的一些属性。一般放在CHARACTER_SETS中。</p>
 <p>序列使用（就是AUTO_INCREMENT）：</p>
 <p>创建表时设置主键和自增序列（自增序列必须是主键）：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table test(</span><br><span class="line">	id int unsigned not null auto_increment,</span><br><span class="line">    primary key(id),</span><br><span class="line">    name varchar(30) not null,</span><br><span class="line">    data data not null,</span><br><span class="line">    origin varchar(30) not null</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>重置序列。如果你删除了数据表中的多条记录，并希望对剩下数据的AUTO_INCREMENT列进行重新排列，那么你可以通过删除自增的列，然后重新添加来实现。 不过该操作要非常小心，如果在删除的同时又有新记录添加，有可能会出现数据混乱。</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table test drop id; # 删掉id</span><br><span class="line">alter table test add id int unsigned not null auto_increment first, add primary key(id); # 重新将id添加回来，会自动生成序列</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>修改序列的开始值：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table test(</span><br><span class="line">	id int unsigned not null auto_increment,</span><br><span class="line">    primary key(id),</span><br><span class="line">    name varchar(30) not null,</span><br><span class="line">    date date not null,</span><br><span class="line">    origin varchar(30) not null</span><br><span class="line">)engine=innodb auto_increment=100 charset=utf8;</span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table test auto_increment = 100;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <hr>
 <p>防止表中出现重复数据：你可以在 MySQL 数据表中设置指定的字段为 <strong>PRIMARY KEY（主键）</strong> 或者 <strong>UNIQUE（唯一）</strong> 索引来保证数据的唯一性。</p>
 <p>统计重复数据：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) as c1 from test group by i2,svrzhang having c1 &gt; 1;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>过滤重复数据：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select distinct last_name,from_name from test;</span><br><span class="line">或</span><br><span class="line">select last_name,first_name from test group by (id);</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>删除重复数据：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table tmp select * from test group by i2;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <hr>
 <p>修改数据表中单个字段的编码格式：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE `tablename` CHANGE `字段名1` `字段名2` VARCHAR(36) CHARACTER SET utf8 NOT NULL;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>修改数据表中所有字段的编码格式：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `tablename` convert to character set utf8; </span><br></pre></td></tr></tbody></table></figure>
+
+
 <hr>
 <p><strong>经典SQL练习笔记：</strong></p>
 <p><strong>group by后的属性值，可以再通过下面方式横向显示出来</strong></p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sum(case when Cid="01" then score else null end)c1,</span><br><span class="line">sum(case when Cid="02" then score else null end)c2,</span><br><span class="line">sum(case when Cid="03" then score else null end)c3</span><br></pre></td></tr></tbody></table></figure>
 <p>例如：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select Sid, score, </span><br><span class="line">    sum(case when Cid=01 then Cid else null end)c1,</span><br><span class="line">    sum(case when Cid=02 then Cid else null end)c2,</span><br><span class="line">    sum(case when Cid=03 then Cid else null end)c3 </span><br><span class="line">from SC group by Sid;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p><strong>经典题目：</strong></p>
-<p>查询各科成绩最高分、最低分和平均分，以如下形式显示：课程 ID，课程 name，最高分，最低分，平均分，及格率，中等率，优良率，优秀率(及格为&gt;=60，中等为：70-80，优良为：80-90，优秀为：&gt;=90）。 要求输出课程号和选修人数，查询结果按人数降序排列，若人数相同，按课程号升序排列</p>
+<p>查询各科成绩最高分、最低分和平均分，以如下形式显示：课程 ID，课程 name，最高分，最低分，平均分，及格率，中等率，优良率，优秀率(及格为&gt;=60，中等为：70-80，优良为：80-90，优秀为：&gt;=90）。<br>要求输出课程号和选修人数，查询结果按人数降序排列，若人数相同，按课程号升序排列</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select b.Cname, a.* from</span><br><span class="line">(select Cid, max(score)max, min(score)min, avg(score)avg,</span><br><span class="line">	count(*)选修人数,</span><br><span class="line">	sum(case when score &gt;= 60 then 1 else 0 end)及格率,</span><br><span class="line">    sum(case when score &gt;= 70 and score &lt;= 80 then 1 else 0 end)中等率,</span><br><span class="line">    sum(case when score &gt;= 80 and score &lt;= 90 then 1 else 0 end)优良率,</span><br><span class="line">    sum(case when score &gt;= 90 then 1 else 0 end)优秀率</span><br><span class="line">from SC group by Cid order by 选修人数 desc) a join Course b on a.Cid = b.Cid order by a.Cid asc;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p><strong>添加一列rank字段，显示排名：</strong></p>
 <p>from后面是变量初始化。</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select a.*, @curRank:=@curRank+1 as rank from (select @curRank := 0) p,(select Sid,avg(score)avg from SC group by Sid order by avg desc) a;</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
 <p><strong>按平均成绩进行排序，显示总排名和各科排名，Score 重复时保留名次空缺</strong>：</p>
 <p>题目答案，但是我没有rank()函数（对应成绩相同的情况，如何处理完全取决于rank()函数是怎么实现的）。</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select s.*, rank_01, rank_02, rank_03, rank_total</span><br><span class="line">from student s</span><br><span class="line">    left join (select sid, rank() over(partition by cid order by score desc) as rank_01 from sc where cid=01) A on s.sid=A.sid</span><br><span class="line">    left join (select sid, rank() over(partition by cid order by score desc) as rank_02 from sc where cid=02) B on s.sid=B.sid</span><br><span class="line">    left join (select sid, rank() over(partition by cid order by score desc) as rank_03 from sc where cid=03) C on s.sid=C.sid</span><br><span class="line">    left join (select sid, rank() over(order by avg(score) desc) as rank_total from sc group by sid) D on s.sid=D.sid</span><br><span class="line">order by rank_total asc</span><br></pre></td></tr></tbody></table></figure>
 <p>我自己的答案：</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select s.*, rank1, rank2, rank3, rankall</span><br><span class="line">from Student s</span><br><span class="line">    left join (select Sid,@curRank1:=@curRank1+1 as rank1 from SC, (select @curRank1 := 0) p  where Cid = "01" order by score desc) A on A.Sid = s.Sid</span><br><span class="line">    left join (select Sid,@curRank2:=@curRank2+1 as rank2 from SC, (select @curRank2 := 0) p  where Cid = "02" order by score desc) B on B.Sid = s.Sid</span><br><span class="line">    left join (select Sid,@curRank3:=@curRank3+1 as rank3 from SC, (select @curRank3 := 0) p  where Cid = "03" order by score desc) C on C.Sid = s.Sid</span><br><span class="line">    left join (select Sid,@curRank4:=@curRank4+1 as rankall from (select Sid, avg(score)avg from SC group by Sid order by avg desc) a, (select @curRank4 := 0) p) D on D.Sid = s.Sid</span><br><span class="line">order by rankall asc;</span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>实际上是解决了这几个子问题：对课程01进行排名；对课程02进行排名；对课程03进行排名；根据每个同学的平均成绩进行排名。最后将这些子问题用left join结合在一起直接出答案。</p>
 <p><strong>查询各科成绩前三名的记录</strong>：直接求出各科排名，然后取前三名即可。</p>
 <p><strong>查询和“01”学号同学学习的课程完全相同的其他同学的id：</strong></p>
 <p>group_concat()函数把各个Cid合并成一个字符串并统一按升序，然后比较这个合并后的字符串即可。实质就是将每个学生的信息进行聚合，然后用聚合后的Cid字符串进行比较。最后把自己刨除掉即可。</p>
 <figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select a.Sid, group_concat(cid order by cid) as Cids from SC a where a.Sid &lt;&gt; "01" group by a.Sid having Cids = (select group_concat(cid order by cid) as Cids from SC where Sid = "01" group by sid)</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
 <p><strong>按各科成绩进行排序，并显示排名， Score 重复时保留名次空缺：</strong></p>
 <p>在条件a.cid = b.cid and a.score &lt; b.score下，SC left join SC的结果（所有属性排列顺序：a.sid, a.cid, a.score, b.sid, b.cid, b.score）是：从笛卡尔积中，将所有同一cid下a.score值小于b.score的情况筛选出来，最终情况就是，如果对a.sid和a.cid进行group，那么每一个group中的a.score均小于b.score，每一个组中元素的数量就是在同一cid下比a.score分数高的同学数量，同一cid下a.score的排名就是count(b.score)+1，重复时保留名次空缺，正好符合题目。</p>
 <p>注意：一定要用left join，否则第一名由于group元素为空而不存在。</p>
