@@ -450,7 +450,7 @@ article blockquote{
         <span class="column is-narrow">
             
             
-            1 分钟 read (About 150 words)
+            1 分钟 lesen (Über 150 Wörter)
         </span>
         
             
@@ -460,10 +460,8 @@ article blockquote{
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
         <html><head></head><body><a id="more"></a>
-<p><strong>原因：</strong><br>这是因为没有找到对应页面。假设新建页面为about，需要在source/about/index.md中写入“layout: abouts”，这个layout所指向的正是真正的abouts.ejs网页（必须指向存在的.ejs页面）。如果你在网页中直接访问<a target="_blank" rel="noopener" href="http://localhost:4000/about/%EF%BC%8C%E8%BF%99%E4%B8%AAabout%E6%8C%87%E7%9A%84%E6%98%AF%E8%AE%BF%E9%97%AEsource/about%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%8C%E7%84%B6%E5%90%8E%E5%86%8D%E4%BC%9A%E6%A0%B9%E6%8D%AE%E6%AD%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84index.md%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AEabouts.ejs%E9%A1%B5%E9%9D%A2%E3%80%82">http://localhost:4000/about/，这个about指的是访问source/about文件夹，然后再会根据此文件夹下的index.md文件访问abouts.ejs页面。</a></p>
-<p><strong>解决方法：</strong><br>将/scaffolds/page.md中的添加上layout即可。如下：</p>
-<figure class="highlight markdown hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: {{ title }}</span><br><span class="line">date: {{ date }}</span><br><span class="line">layout: {{ title }}</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
+<p><strong>原因：</strong> 这是因为没有找到对应页面。假设新建页面为about，需要在source/about/index.md中写入“layout: abouts”，这个layout所指向的正是真正的abouts.ejs网页（必须指向存在的.ejs页面）。如果你在网页中直接访问http://localhost:4000/about/，这个about指的是访问source/about文件夹，然后再会根据此文件夹下的index.md文件访问abouts.ejs页面。</p>
+<p><strong>解决方法：</strong> 将/scaffolds/page.md中的添加上layout即可。如下： </p><figure class="highlight markdown hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: {{ title }}</span><br><span class="line">date: {{ date }}</span><br><span class="line">layout: {{ title }}</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
 </body></html>
     
     </div>
